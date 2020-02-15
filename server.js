@@ -37,7 +37,7 @@ var server = http.createServer(function(request, response){
         <h2>别看我没写html和body标签，浏览器会给我补全。</h2>
         <script src="/y"></script>
     `)//html和css就是 通过link...连接起来了
-    response.end('我是response.end里写入的内容，如果写入的字符串中没有写body标签，我会被包裹在body中，如果写了我会在body外面。\n')//end也会写入，一调用就会发送给浏览器，如果没有写end就会一直等你调用end（当然浏览器可能会优化，还是建议写上）
+    response.end('我是response.end里写入的内容。\n')//end也会写入，一调用就会发送给浏览器，如果没有写end就会一直等你调用end（当然浏览器可能会优化，还是建议写上）
   } else if(path === '/x'){//在 sources/page中由x这个资源，浏览器是把响应的内容创建文件，然后写入进去的吗？ //这里的x（其实是个文件）没有写后缀，文件的类型就是contenttype决定的
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/css;charset=utf-8')
